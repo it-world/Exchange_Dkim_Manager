@@ -49,8 +49,8 @@ Forgejo/Gitea server) whether a new version exists.
 * Suggested TXT records per domain and a check whether they are published, against configurable
   DNS servers.
 * **DNS check of all domains**: every selector of every enabled domain in the internal and the
-  external DNS, OK / warning / error per selector, with the DMARC record and alignment, and as a
-  PDF report with a timestamp.
+  external DNS, OK / warning / error per selector, with the DMARC record of both sides, and as a
+  PDF report for audits (scope, method, overview, notes, page x of y, SHA-256 file).
 * **DNS export**: all records grouped by domain, to the clipboard and to `dns-records.txt`.
 * Optional direct write of the records into the **Active Directory DNS** over LDAP or LDAPS,
   including creation of the DNS account and the zone permissions.
@@ -140,6 +140,12 @@ Restart-Service MSExchangeTransport
 ```
 
 Release notes for every version are in the description of each release.
+
+## Support
+
+* Questions, problems and ideas: [GitHub issues](https://github.com/it-world/Exchange_Dkim_Manager/issues).
+* Optional paid support by IT-world ITW GmbH: dkim-manager-support@it-world.eu.
+* The window **Support information** (About tab) shows both and builds a report to attach.
 
 ## Licenses
 
