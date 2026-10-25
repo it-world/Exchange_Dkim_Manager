@@ -1,6 +1,6 @@
 # ITW Exchange DKIM Manager
 
-Version **4.6.4.113**
+Version **4.6.4.114**
 
 ## About
 
@@ -155,5 +155,5 @@ The full license texts are in `3rdPartyLicenses.txt` and `SourceSans3-OFL.txt` i
 archive.
 
 Note: `System.Management.Automation.dll` in `build\lib` is the assembly of the Windows PowerShell
-installation and is used for the build. It is not part of the release archive of 4.6.4.113; the
+installation and is used for the build. It is not part of the release archive of 4.6.4.114; the
 program uses the copy of Windows PowerShell on the server.
