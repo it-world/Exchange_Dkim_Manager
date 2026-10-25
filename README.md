@@ -1,6 +1,8 @@
 # ITW Exchange DKIM Manager
 
-Version **4.6.4.136**
+Version **4.6.5.3**
+
+Made in Austria (EU) by IT-world ITW GmbH, Vienna.
 
 ## About
 
