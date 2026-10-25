@@ -1,6 +1,6 @@
 # ITW Exchange DKIM Manager
 
-Version **4.6.4.119**
+Version **4.6.4.120**
 
 ## About
 
@@ -95,7 +95,7 @@ Forgejo/Gitea server) whether a new version exists.
 * Log tab with the agents' event log entries, forensic log (level 5) and all log files in `logs\`.
 * Errors and warnings of DKIM and ARC agents in the Windows Application log.
 * User interface in English or German, switched at once in the menu **Language / Sprache**; every
-  check box, selection and input field explains itself in a tooltip in both languages.
+  check box, selection, input field, button and submenu - in popups too - explains itself in a tooltip in both languages.
 * Light and dark appearance.
 * All settings in one file, `config.ini`.
 
@@ -167,5 +167,5 @@ The full license texts are in `3rdPartyLicenses.txt` and `SourceSans3-OFL.txt` i
 archive.
 
 Note: `System.Management.Automation.dll` in `build\lib` is the assembly of the Windows PowerShell
-installation and is used for the build. It is not part of the release archive of 4.6.4.119; the
+installation and is used for the build. It is not part of the release archive of 4.6.4.120; the
 program uses the copy of Windows PowerShell on the server.
