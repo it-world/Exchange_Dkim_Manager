@@ -122,7 +122,8 @@ Forgejo/Gitea server) whether a new version exists.
    [releases](https://github.com/it-world/Exchange_Dkim_Manager/releases).
 2. Extract it to a local folder of your choice, **not** into `C:\Program Files`.
 3. Run `Unblock-DkimManager.ps1` as Administrator (removes the "Mark of the Web").
-4. Run `ITW-DkimManager.exe` as Administrator and follow the installation.
+4. Run `ITW-DkimManager.exe` as Administrator, read and accept the license (a PDF copy is saved on
+   your desktop) and follow the installation. Without the acceptance the program cannot be used.
 
 The program installs into `C:\Program Files\ITW Exchange DKIM Manager`. The Microsoft Exchange
 Transport service is stopped during the installation, so plan a short break in mail flow. An
