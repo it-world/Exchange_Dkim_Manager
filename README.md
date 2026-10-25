@@ -97,7 +97,8 @@ Forgejo/Gitea server) whether a new version exists.
   with a copy of the installation (program, configuration, keys) in `backups\` before every update;
   the archive is checked against the `.sha256` file of the release before it is unpacked.
 * Backup and restore of configuration and keys as a ZIP archive.
-* Migration from Exchange DKIM Signer 3.4.0 and 4.4.x.
+* Migration from Exchange DKIM Signer 3.4.0 and 4.4.x. The Migration tab appears only when such an
+  installation is found, or when the program is started with `/migration` (or `--migration`).
 * Log tab with the agents' event log entries, forensic log (level 5) and all log files in `logs\`.
 * Errors and warnings of DKIM and ARC agents in the Windows Application log.
 * User interface in English or German, switched at once in the menu **Language / Sprache**; every
