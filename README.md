@@ -1,6 +1,6 @@
 # ITW Exchange DKIM Manager
 
-Version **4.6.4.110**
+Version **4.6.4.111**
 
 ## About
 
@@ -37,7 +37,7 @@ Forgejo/Gitea server) whether a new version exists.
 * Seals with the DKIM signer's key by default; an own selector, key file or certificate is optional.
 * DMARC aggregate reports (rua) and failure reports (ruf, only after a GDPR warning is confirmed).
 * Both agents are registered with every installation and update and stay disabled until
-  "Activate the ARC sealer" is switched on.
+  "Activate the ARC sealer" (tab Configuration) is switched on.
 
 ### DNS
 
@@ -153,5 +153,5 @@ The full license texts are in `3rdPartyLicenses.txt` and `SourceSans3-OFL.txt` i
 archive.
 
 Note: `System.Management.Automation.dll` in `build\lib` is the assembly of the Windows PowerShell
-installation and is used for the build. It is not part of the release archive of 4.6.4.110; the
+installation and is used for the build. It is not part of the release archive of 4.6.4.111; the
 program uses the copy of Windows PowerShell on the server.
