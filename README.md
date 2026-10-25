@@ -111,11 +111,12 @@ Forgejo/Gitea server) whether a new version exists.
 | Item | Requirement |
 |---|---|
 | Exchange Server | 2013 CU23 (15.0.1497.2) or later, 2016 CU13 (15.1.1779.2) or later, 2019 RTM (15.2.221.12) or later, Subscription Edition |
-| Exchange role | Mailbox / Transport server; major version 16 and above is not supported |
-| Operating system | Windows Server with desktop experience (the program has a graphical interface) |
-| Runtime | .NET Framework 4.8 |
-| Account | Administrator on the Exchange server; for the sync also administrator on each client |
-| DNS | Ability to publish TXT records for the signing domains |
+| Exchange role | Mailbox server with the Microsoft Exchange Transport service. For the sync role Management a Windows Server without Exchange is enough |
+| Operating system | A Windows Server version supported by the Exchange version, with desktop experience (the program has a graphical interface) |
+| Runtime | .NET Framework 4.8 and Windows PowerShell (both part of Windows Server) |
+| Account | Local administrator on the Exchange server; for the sync also administrator on each client and access to its C$ share (SMB, port 445) |
+| DNS | Ability to publish TXT records for the signing domains; optionally written straight into AD-integrated DNS zones (write permission on the zone) |
+| Internet | Not needed for signing; only for the optional update check and the DNS check against external DNS servers |
 
 ## Installation
 
