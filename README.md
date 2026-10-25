@@ -1,6 +1,6 @@
 # ITW Exchange DKIM Manager
 
-Version **4.6.4.129**
+Version **4.6.4.130**
 
 ## About
 
@@ -74,6 +74,9 @@ Forgejo/Gitea server) whether a new version exists.
   security report or custom), written by the program itself.
 * With the sync, statistics and reports add up all servers and show a per-server table.
 * Counts only: no addresses are stored.
+* **E-mail notifications**: error messages from a chosen level (fatal, error, warning) and the PDF
+  statistics and forensic reports daily, weekly or monthly by mail, through one SMTP account or one each.
+* **OpenTelemetry**: counters and event log entries to a collector over OTLP/HTTP (JSON).
 
 ### Security
 
@@ -168,5 +171,5 @@ The full license texts are in `3rdPartyLicenses.txt` and `SourceSans3-OFL.txt` i
 archive.
 
 Note: `System.Management.Automation.dll` in `build\lib` is the assembly of the Windows PowerShell
-installation and is used for the build. It is not part of the release archive of 4.6.4.129; the
+installation and is used for the build. It is not part of the release archive of 4.6.4.130; the
 program uses the copy of Windows PowerShell on the server.
