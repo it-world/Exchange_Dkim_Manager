@@ -1,6 +1,6 @@
 # ITW Exchange DKIM Manager
 
-Version **4.6.4.118**
+Version **4.6.4.119**
 
 ## About
 
@@ -24,11 +24,11 @@ Forgejo/Gitea server) whether a new version exists.
   them at every start.
 * Optional second signature with **Ed25519** (RFC 8463). Per domain: RSA, Ed25519 or both.
 * Key generation for one or all domains, or use of existing PEM keys.
-* **Automatic key rotation** per domain, 1 to 24 new keys a year, worked through as a list by date
-  (rotation plan): the new selector is published (AD DNS write or by hand), the signer switches only
-  after the external DNS check finds it, the previous key is revoked after an overlap and archived. A
-  daily task of the Windows task scheduler runs it, and every step goes into an audit trail
-  (`logs\key-rotation-audit.log`) with key fingerprints and DNS results.
+* **Automatic key rotation** per domain in a window of its own: every week up to every year, keys
+  created up to 24 months in advance (selector `<yyyyMMdd>_rsa` / `<yyyyMMdd>_ed25519`), a file of the DNS
+  records with the date by which each has to be public, the switch only after the external DNS shows the new
+  key, then the internal DNS; the old record leaves the internal DNS after 3 days and the old keys are zipped
+  with the rotation log. DNS records and keys can be exported, every step is in an audit trail.
 * Configurable algorithm, canonicalization and signed headers.
 * Changes to the configuration take effect without restarting the transport service.
 
@@ -167,5 +167,5 @@ The full license texts are in `3rdPartyLicenses.txt` and `SourceSans3-OFL.txt` i
 archive.
 
 Note: `System.Management.Automation.dll` in `build\lib` is the assembly of the Windows PowerShell
-installation and is used for the build. It is not part of the release archive of 4.6.4.118; the
+installation and is used for the build. It is not part of the release archive of 4.6.4.119; the
 program uses the copy of Windows PowerShell on the server.
