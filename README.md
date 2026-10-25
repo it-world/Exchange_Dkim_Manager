@@ -1,6 +1,6 @@
 # ITW Exchange DKIM Manager
 
-Version **4.6.4.114**
+Version **4.6.4.116**
 
 ## About
 
@@ -24,6 +24,11 @@ Forgejo/Gitea server) whether a new version exists.
   them at every start.
 * Optional second signature with **Ed25519** (RFC 8463). Per domain: RSA, Ed25519 or both.
 * Key generation for one or all domains, or use of existing PEM keys.
+* **Automatic key rotation** per domain, 1 to 24 new keys a year, worked through as a list by date
+  (rotation plan): the new selector is published (AD DNS write or by hand), the signer switches only
+  after the external DNS check finds it, the previous key is revoked after an overlap and archived. A
+  daily task of the Windows task scheduler runs it, and every step goes into an audit trail
+  (`logs\key-rotation-audit.log`) with key fingerprints and DNS results.
 * Configurable algorithm, canonicalization and signed headers.
 * Changes to the configuration take effect without restarting the transport service.
 
@@ -43,6 +48,9 @@ Forgejo/Gitea server) whether a new version exists.
 
 * Suggested TXT records per domain and a check whether they are published, against configurable
   DNS servers.
+* **DNS check of all domains**: every selector of every enabled domain in the internal and the
+  external DNS, OK / warning / error per selector, with the DMARC record and alignment, and as a
+  PDF report with a timestamp.
 * **DNS export**: all records grouped by domain, to the clipboard and to `dns-records.txt`.
 * Optional direct write of the records into the **Active Directory DNS** over LDAP or LDAPS,
   including creation of the DNS account and the zone permissions.
@@ -60,7 +68,8 @@ Forgejo/Gitea server) whether a new version exists.
 * Counters for processed, signed, failed and unsigned messages, per sending domain, and the ARC
   results (SPF/DKIM/DMARC/ARC pass rates, seals).
 * Evaluations per period (day to year or free range) with trend chart, comparison with the previous
-  period and an assessment.
+  period and an assessment, including the signing time (average, minimum, maximum).
+* The Status tab shows since when the transport service runs and the time of the last signature.
 * **PDF reports** (monthly, quarterly, annual management report, weekly operations report, e-mail
   security report or custom), written by the program itself.
 * With the sync, statistics and reports add up all servers and show a per-server table.
@@ -73,6 +82,9 @@ Forgejo/Gitea server) whether a new version exists.
 * `keys\` and `backups\` get their own NTFS permissions (SYSTEM and Administrators full control,
   NETWORK SERVICE read).
 * The build runs the .NET SDK's security analyzers; a finding stops the build.
+* **Audit mode**: every change of a setting goes into `logs\audit.log` with Windows account, computer
+  and time; passwords are never written. The audit files carry a SHA-256 hash chain that the program
+  checks.
 
 ### Update, backup and operation
 
@@ -155,5 +167,5 @@ The full license texts are in `3rdPartyLicenses.txt` and `SourceSans3-OFL.txt` i
 archive.
 
 Note: `System.Management.Automation.dll` in `build\lib` is the assembly of the Windows PowerShell
-installation and is used for the build. It is not part of the release archive of 4.6.4.114; the
+installation and is used for the build. It is not part of the release archive of 4.6.4.116; the
 program uses the copy of Windows PowerShell on the server.
