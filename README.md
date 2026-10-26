@@ -13,8 +13,7 @@ transport agents that run inside the Microsoft Exchange Transport service and a 
 (`ITW-DkimManager.exe`) that installs them, manages domains, keys and DNS records, and shows
 statistics and logs.
 
-The program sends no telemetry. It only asks the release repository (GitHub, or an internal
-Forgejo/Gitea server) whether a new version exists.
+The program sends no telemetry. It only asks the release repository whether a new version exists.
 
 ## Features
 
