@@ -43,8 +43,12 @@ Forgejo/Gitea server) whether a new version exists.
   agent, directly after the DKIM agent.
 * Seals with the DKIM signer's key by default; an own selector, key file or certificate is optional.
 * DMARC aggregate reports (rua) and failure reports (ruf, only after a GDPR warning is confirmed).
+* **Mail check** (ARC configuration, page Inbound): one header `X-ITW-Mail-Check: clean | suspicious | fail`
+  with the single results (`spf=pass dkim=pass dmarc=pass`) on every mail from the Internet, for transport
+  rules, Outlook rules or a spam filter. Forged headers of that name are removed; mail is only marked, never
+  blocked. Works with the ARC sealer switched off as well.
 * Both agents are registered with every installation and update and stay disabled until
-  "Activate the ARC sealer" (tab Configuration) is switched on.
+  "Activate the ARC sealer" (tab Configuration) or the mail check is switched on.
 
 ### DNS
 
@@ -105,7 +109,6 @@ Forgejo/Gitea server) whether a new version exists.
 * Errors and warnings of DKIM and ARC agents in the Windows Application log.
 * User interface in English or German, switched at once in the menu **Language / Sprache**; every
   check box, selection, input field, button and submenu - in popups too - explains itself in a tooltip in both languages.
-* Light and dark appearance.
 * All settings in one file, `config.ini`.
 
 ## Requirements
