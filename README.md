@@ -1,8 +1,21 @@
+<p align="center">
+  <a href="https://dkim-manager.eu/en/">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://dkim-manager.eu/assets/brand/logo-itw-exchange-dkim-manager-invert.svg">
+      <img src="https://dkim-manager.eu/assets/brand/logo-itw-exchange-dkim-manager.svg" width="440" alt="ITW Exchange DKIM Manager">
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://dkim-manager.eu/assets/images/flags/at.svg" height="16" alt="Flag of Austria">
+  <img src="https://dkim-manager.eu/assets/images/flags/eu.svg" height="16" alt="Flag of the European Union">
+  <b>Made in Austria (EU)</b> by IT-world ITW GmbH, Vienna
+</p>
+
 # ITW Exchange DKIM Manager
 
 Version **4.6.5.5**
-
-Made in Austria (EU) by IT-world ITW GmbH, Vienna.
 
 ## About
 
