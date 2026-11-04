@@ -68,7 +68,7 @@ Sample data.
   audit mode with a checked hash chain.
 * **Operation:** update check with a `.sha256` check and a backup before every update, backup and
   restore, migration from Exchange DKIM Signer 3.4.0 and 4.4.x, English and German interface.
-* **No telemetry:** the program only asks the release repository whether a new version exists.
+* **No telemetry:** the program only checks whether a new version exists.
 
 ## Requirements
 
