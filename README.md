@@ -40,13 +40,128 @@ and manages domains, keys, DNS records, statistics and logs.
 
 ## Screenshots
 
-Sample data.
+All screenshots show sample data.
 
 ![Configuration of domains and keys](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/configuration.png)
 
 ![Statistics with evaluation per period](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/statistics.png)
 
 ![Automatic key rotation](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/key-rotation.png)
+
+<details>
+<summary><b>All other windows</b></summary>
+
+### Main window
+
+**Status**
+
+![Status](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/status.png)
+
+**Advanced Configuration**
+
+![Advanced Configuration](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/advanced-configuration.png)
+
+**Sync**
+
+![Sync](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/sync.png)
+
+**Log**
+
+![Log](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/log.png)
+
+**About**
+
+![About](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/about.png)
+
+### Keys, DNS and ARC
+
+**DKIM Header Configuration**
+
+![DKIM Header Configuration](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/dkim-header-configuration.png)
+
+**ARC configuration**
+
+![ARC configuration](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/arc-configuration.png)
+
+**External DNS check**
+
+![External DNS check](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/external-dns-check.png)
+
+**Check DNS of all domains**
+
+![Check DNS of all domains](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/dns-check-all-domains.png)
+
+**Active Directory DNS**
+
+![Active Directory DNS](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/ad-dns-settings.png)
+
+**Administrator account**
+
+![Administrator account](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/administrator-account.png)
+
+**Create DNS admin user**
+
+![Create DNS admin user](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/create-dns-admin-user.png)
+
+### Statistics and notifications
+
+**Domain Statistics**
+
+![Domain Statistics](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/domain-statistics.png)
+
+**PDF report**
+
+![PDF report](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/pdf-report.png)
+
+**E-mail notifications**
+
+![E-mail notifications](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/email-notifications.png)
+
+**OpenTelemetry (OTLP)**
+
+![OpenTelemetry](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/opentelemetry.png)
+
+### Operation
+
+**Transport Agent**
+
+![Transport Agent](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/transport-agent.png)
+
+**Earlier releases**
+
+![Earlier releases](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/earlier-releases.png)
+
+**Backup**
+
+![Backup](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/backup.png)
+
+**Support information**
+
+![Support information](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/support-information.png)
+
+**Help**
+
+![Help](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/help.png)
+
+### License and installation
+
+**License acceptance**
+
+![License acceptance](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/license-acceptance.png)
+
+**Installation**
+
+![Installation](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/installation.png)
+
+**License**
+
+![License](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/license.png)
+
+**Terms of use**
+
+![Terms of use](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/terms-of-use.png)
+
+</details>
 
 ## Features
 
