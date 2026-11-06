@@ -177,6 +177,9 @@ All screenshots show sample data.
   report, export of all records, optional direct write into Active Directory DNS.
 * **Several servers:** sync of configuration and keys from a master to its clients, with combined
   statistics.
+* **eFa-next:** sends the DKIM keys and DKIM records of the domains to one or many eFa-next filters
+  over their provisioning API (mutual TLS, pinned server certificate, token), also after every key
+  rotation.
 * **Statistics and reports:** counters per domain and period, PDF reports, e-mail notifications,
   OpenTelemetry export. Counts only: no addresses are stored.
 * **Security:** passwords in the configuration encrypted, own NTFS permissions for keys and backups,
