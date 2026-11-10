@@ -38,155 +38,159 @@ and manages domains, keys, DNS records, statistics and logs.
 > and in case of doubt the [German version](https://dkim-manager.eu/lizenz/) prevails. Installing or
 > using the software means accepting it and confirming that you are a business.
 
-## Screenshots
+## Features
 
 All screenshots show sample data.
 
+### DKIM signing
+
+* Signs every outgoing mail per domain with RSA (2048, 3072 or 4096 bit), optionally with a second
+  signature with Ed25519.
+* Generates keys or uses existing PEM keys; algorithm, canonicalization and the signed headers are
+  configurable.
+* Suggests the DNS records and checks them in the internal and the external DNS.
+
 ![Configuration of domains and keys](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/configuration.png)
 
-![Statistics with evaluation per period](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/statistics.png)
-
-![Automatic key rotation](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/key-rotation.png)
-
 <details>
-<summary><b>All other windows</b></summary>
-
-### Main window
-
-**Status**
-
-![Status](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/status.png)
-
-**Advanced Configuration**
-
-![Advanced Configuration](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/advanced-configuration.png)
-
-**Sync**
-
-![Sync](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/sync.png)
-
-**Log**
-
-![Log](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/log.png)
-
-**About**
-
-![About](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/about.png)
-
-### Keys, DNS and ARC
-
-**DKIM Header Configuration**
+<summary>DKIM header configuration, DNS checks</summary>
 
 ![DKIM Header Configuration](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/dkim-header-configuration.png)
 
-**ARC configuration**
-
-![ARC configuration](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/arc-configuration.png)
-
-**External DNS check**
-
 ![External DNS check](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/external-dns-check.png)
-
-**Check DNS of all domains**
 
 ![Check DNS of all domains](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/dns-check-all-domains.png)
 
-**Active Directory DNS**
+</details>
+
+### Automatic key rotation
+
+* Changes the keys of a domain by a plan (every week up to every year), with keys created in advance.
+* Switches only when every external DNS server shows the new key; the old record is removed after
+  the overlap days.
+* Every step goes into an audit trail.
+
+![Automatic key rotation](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/key-rotation.png)
+
+### Signatures, banners and disclaimers of ITW Disclaimer
+
+* Inserts the signatures, banners and disclaimers of ITW Disclaimer into outgoing mail before it is
+  signed, so the DKIM signature covers them. No extra transport agent.
+* Rules from ITW Disclaimer: user before group before domain, internal or external recipients,
+  validity times and campaigns; placeholders are filled from the Active Directory.
+* Signed or encrypted mail, meeting requests and automatic replies are left as they are. Mode Off,
+  Test (chosen senders only) or On on the Sync tab.
+
+### ARC and mail check
+
+* ARC (RFC 8617): checks inbound mail (SPF, DKIM, DMARC, ARC) and seals mail that leaves the
+  organization again. DMARC aggregate and failure reports.
+* Mail check: one header `X-ITW-Mail-Check: clean | suspicious | fail` on mail from the Internet,
+  for transport rules or a spam filter. Mail is only marked, never blocked.
+
+![ARC configuration](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/arc-configuration.png)
+
+### Active Directory DNS
+
+* Writes the DKIM records straight into the Active Directory DNS, with an account of its own that the
+  program can create and grant the rights.
+
+<details>
+<summary>Active Directory DNS, DNS admin user</summary>
 
 ![Active Directory DNS](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/ad-dns-settings.png)
 
-**Administrator account**
+![Create DNS admin user](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/create-dns-admin-user.png)
 
 ![Administrator account](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/administrator-account.png)
 
-**Create DNS admin user**
+</details>
 
-![Create DNS admin user](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/create-dns-admin-user.png)
+### Several servers
 
-### Statistics and notifications
+* A master hands configuration, keys, program version and the signature bundles of ITW Disclaimer to
+  its clients over HTTPS with mutual TLS: pinned certificates, signed manifests, keys encrypted per
+  client.
+* Combined statistics of all servers.
 
-**Domain Statistics**
+![Sync](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/sync.png)
+
+### eFa-next
+
+* Sends the DKIM keys and records of the domains to one or many eFa-next filters over their
+  provisioning API (mutual TLS, pinned certificate, token), also after every key rotation.
+
+![eFa-next](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/efa-next.png)
+
+### Statistics, reports and notifications
+
+* Counters per domain and period, comparison with the previous period, PDF reports.
+* E-mail notifications for errors and reports, OpenTelemetry (OTLP) export.
+* Counts only: no addresses are stored.
+
+![Statistics with evaluation per period](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/statistics.png)
+
+<details>
+<summary>Domain statistics, PDF report, notifications, OpenTelemetry, log</summary>
 
 ![Domain Statistics](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/domain-statistics.png)
 
-**PDF report**
-
 ![PDF report](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/pdf-report.png)
-
-**E-mail notifications**
 
 ![E-mail notifications](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/email-notifications.png)
 
-**OpenTelemetry (OTLP)**
-
 ![OpenTelemetry](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/opentelemetry.png)
 
-### Operation
+![Log](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/log.png)
 
-**Transport Agent**
+</details>
+
+### Operation and security
+
+* Status of the program and the Exchange transport service, order of the transport agents.
+* Update check; every update is checked against its `.sha256` file and, on a signed installation,
+  against the signature of IT-world. Backup before every update, return to an earlier release.
+* Passwords in the configuration encrypted, own NTFS permissions for keys and backups, audit mode
+  with a checked hash chain.
+* Migration from Exchange DKIM Signer 3.4.0 and 4.4.x, English and German interface, help for every
+  window.
+* No telemetry: the program only checks whether a new version exists.
+
+![Status](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/status.png)
+
+<details>
+<summary>Advanced configuration, transport agent, releases, backup, support, help, about</summary>
+
+![Advanced Configuration](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/advanced-configuration.png)
 
 ![Transport Agent](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/transport-agent.png)
 
-**Earlier releases**
-
 ![Earlier releases](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/earlier-releases.png)
-
-**Backup**
 
 ![Backup](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/backup.png)
 
-**Support information**
-
 ![Support information](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/support-information.png)
-
-**Help**
 
 ![Help](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/help.png)
 
+![About](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/about.png)
+
+</details>
+
 ### License and installation
 
-**License acceptance**
+<details>
+<summary>License acceptance, installation, license, terms of use</summary>
 
 ![License acceptance](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/license-acceptance.png)
 
-**Installation**
-
 ![Installation](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/installation.png)
 
-**License**
-
 ![License](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/license.png)
-
-**Terms of use**
 
 ![Terms of use](https://raw.githubusercontent.com/it-world/Exchange_Dkim_Manager/master/screenshots/terms-of-use.png)
 
 </details>
-
-## Features
-
-* **DKIM signing** per domain with RSA (2048, 3072 or 4096 bit), optionally a second signature with
-  Ed25519. Key generation or existing PEM keys; configurable algorithm, canonicalization and headers.
-* **Automatic key rotation** per domain: the switch happens only after the external DNS shows the
-  new key, and every step goes into an audit trail.
-* **ARC (RFC 8617):** checks inbound mail (SPF, DKIM, DMARC, ARC) and seals mail that leaves the
-  organization again. DMARC aggregate and failure reports.
-* **Mail check:** one header `X-ITW-Mail-Check: clean | suspicious | fail` on mail from the Internet,
-  for transport rules or a spam filter. Mail is only marked, never blocked.
-* **DNS:** suggested records, a check of all domains against internal and external DNS with a PDF
-  report, export of all records, optional direct write into Active Directory DNS.
-* **Several servers:** sync of configuration and keys from a master to its clients, with combined
-  statistics.
-* **eFa-next:** sends the DKIM keys and DKIM records of the domains to one or many eFa-next filters
-  over their provisioning API (mutual TLS, pinned server certificate, token), also after every key
-  rotation.
-* **Statistics and reports:** counters per domain and period, PDF reports, e-mail notifications,
-  OpenTelemetry export. Counts only: no addresses are stored.
-* **Security:** passwords in the configuration encrypted, own NTFS permissions for keys and backups,
-  audit mode with a checked hash chain.
-* **Operation:** update check with a `.sha256` check and a backup before every update, backup and
-  restore, migration from Exchange DKIM Signer 3.4.0 and 4.4.x, English and German interface.
-* **No telemetry:** the program only checks whether a new version exists.
 
 ## Requirements
 
