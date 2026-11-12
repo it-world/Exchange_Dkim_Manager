@@ -80,6 +80,10 @@ All screenshots show sample data.
   validity times and campaigns; placeholders are filled from the Active Directory.
 * Signed or encrypted mail, meeting requests and automatic replies are left as they are. Mode Off,
   Test (chosen senders only) or On on the Sync tab.
+* The license of ITW Disclaimer is checked on every server; the master asks the IT-world license
+  server over HTTPS, with signed fallback hosts (proxy possible, can be switched off). After the grace of an ended license
+  nothing is inserted. Senders are only counted, as a one-way hash.
+* No second signature when the Outlook add-in of ITW Disclaimer already inserted one.
 
 ### ARC and mail check
 
